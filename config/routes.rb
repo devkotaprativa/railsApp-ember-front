@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  #get 'csrf/index'
-  get :csrf, to: 'csrf#index'
-  get 'posts/index'
+  resources :posts
 
   devise_for :users, :controller => {:sessions => "sessions"}
   # The priority is based upon order of creation: first created -> highest priority.

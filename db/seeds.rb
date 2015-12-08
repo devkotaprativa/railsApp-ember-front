@@ -11,3 +11,13 @@ User.create([
   {email: 'pink@mail.com',
    password: '12345678', password_confirmation: '12345678'}
 ])
+
+Post.create([
+  {title: 'lorem ipsolem',
+    body: 'its spanish'
+  },
+
+  {title: 'itliean lipsome',
+    body: 'its from itly'
+  }
+  ])

@@ -1,17 +1,11 @@
 class User < ActiveRecord::Base
-   before_save :ensure_authentication_token
+  before_save :ensure_authentication_token
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-
-  # leave the devise line
-  # devise :database_authenticatable etc.
-
   def ensure_authentication_token
     if authentication_token.blank?
-      binding.pry
       self.authentication_token = generate_authentication_token
     end
   end
